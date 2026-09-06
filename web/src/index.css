@@ -1,0 +1,357 @@
+:root {
+  --bg: #0b0f17;
+  --bg-panel: #121826;
+  --bg-panel-alt: #1a2233;
+  --border: #263047;
+  --text: #d7dee8;
+  --text-muted: #8b96a8;
+  --text-h: #f3f6fb;
+  --accent: #3ba7ff;
+  --ok: #38c172;
+  --warn: #f0b429;
+  --error: #ef4444;
+  --info: #3ba7ff;
+  font: 15px/150% system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+h1 {
+  font-size: 26px;
+  margin: 0 0 8px;
+  color: var(--text-h);
+}
+
+h2 {
+  font-size: 18px;
+  margin: 24px 0 12px;
+  color: var(--text-h);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+.muted.small {
+  font-size: 13px;
+}
+
+a {
+  color: var(--accent);
+}
+
+input,
+select,
+button {
+  font: inherit;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel-alt);
+  color: var(--text);
+  padding: 8px 10px;
+}
+
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #04121f;
+  border: none;
+  font-weight: 600;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button.btn-secondary,
+button.link-button {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  font-weight: 500;
+}
+button.link-button {
+  border: none;
+  padding: 4px 0;
+}
+
+.error {
+  color: var(--error);
+}
+
+/* Auth page */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-form {
+  width: 360px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* App shell */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+}
+.app-header .brand {
+  font-weight: 700;
+  color: var(--text-h);
+}
+.app-header nav {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+.app-header nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 6px 0;
+}
+.app-header nav a.active {
+  color: var(--text-h);
+  border-bottom: 2px solid var(--accent);
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.app-main {
+  flex: 1;
+  padding: 24px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+td.empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 24px;
+}
+
+.inline-form,
+.scan-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+.scan-form {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.scan-form label,
+.scan-form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.scan-form fieldset {
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: none;
+  padding: 0;
+  gap: 12px;
+}
+.checkbox-label {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px !important;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  background: var(--bg-panel-alt);
+  border: 1px solid var(--border);
+}
+.badge-ok {
+  color: var(--ok);
+  border-color: var(--ok);
+}
+.badge-warn {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+.badge-error {
+  color: var(--error);
+  border-color: var(--error);
+}
+.badge-info {
+  color: var(--info);
+  border-color: var(--info);
+}
+.badge-neutral {
+  color: var(--text-muted);
+}
+.badge-sev-critical,
+.badge-sev-high {
+  color: var(--error);
+  border-color: var(--error);
+}
+.badge-sev-medium {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+.badge-sev-low,
+.badge-sev-info,
+.badge-sev-unknown {
+  color: var(--text-muted);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 20px 0 8px;
+  border-bottom: 1px solid var(--border);
+}
+.tab {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-radius: 0;
+  font-weight: 500;
+}
+.tab.active {
+  color: var(--text-h);
+  border-bottom: 2px solid var(--accent);
+}
+
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.table-toolbar .spacer {
+  flex: 1;
+}
+
+.log-message {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.stat-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.severity-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.severity-pill {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  text-transform: capitalize;
+}
+.severity-critical,
+.severity-high {
+  color: var(--error);
+  border-color: var(--error);
+}
+.severity-medium {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+.severity-low,
+.severity-info,
+.severity-unknown {
+  color: var(--text-muted);
+}
